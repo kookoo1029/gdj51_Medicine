@@ -33,10 +33,10 @@
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create.
 Any contributions you make are greatly appreciated.
 
-    [Request Feature yourself](https://github.com/kookoo1029/gdj51_Medicine/issues)
-    Fork the Project
-    Create your Feature Branch (git checkout -b feature/#{IssueNumber})
+1. [Request Feature yourself](https://github.com/kookoo1029/gdj51_Medicine/issues)
+2. Fork the Project
+3. Create your Feature Branch (git checkout -b feature/#{IssueNumber})
         ex) feature/#1
-    Commit your Changes (git commit -m 'Issue #{IssueNumber} feat: Add some AmazingFeature')
-    Push to the Branch (git push origin feature/#{IssueNumber})
-    Open a Pull Request
+4. Commit your Changes (git commit -m 'Issue #{IssueNumber} feat: Add some AmazingFeature')
+5. Push to the Branch (git push origin feature/#{IssueNumber})
+6. Open a Pull Request
