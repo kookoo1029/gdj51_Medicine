@@ -9,8 +9,9 @@ FROM(SELECT HFF.HEALTH_FUN_FOOD_NUM, HFF.PROD_PIC, CN.COM_NM, HFF.PROD_NM, SH.SH
 	                        ON HFF.COM_NUM = CN.COM_NUM
                             INNER JOIN SHAPE SH
                             ON HFF.SHAPE_NUM = SH.SHAPE_NUM
-	WHERE HFF.PROD_NM LIKE '%' || #{searchbox} || '%'
-	OR CN.COM_NM LIKE '%' || #{searchbox} || '%')C
+	WHERE HFF.DEL_D IS NULL
+	AND (HFF.PROD_NM LIKE '%' || #{searchbox} || '%'
+	OR CN.COM_NM LIKE '%' || #{searchbox} || '%'))C
 WHERE C.RNUM BETWEEN #{start} AND #{end}
 </select>
 
@@ -18,7 +19,9 @@ WHERE C.RNUM BETWEEN #{start} AND #{end}
 SELECT COUNT(*) AS CNT
 FROM HEALTH_FUN_FOOD HFF INNER JOIN COM_NM CN
                         ON HFF.COM_NUM = CN.COM_NUM
-WHERE HFF.PROD_NM LIKE '%' || #{searchbox} || '%'
+WHERE HFF.DEL_D IS NULL
+AND (HFF.PROD_NM LIKE '%' || #{searchbox} || '%'
+OR CN.COM_NM LIKE '%' || #{searchbox} || '%')
 </select>
 
 <select id="getPopupSearch" parameterType="hashmap" resultType="hashmap">
